@@ -1,0 +1,22 @@
+{
+  "name": "simplematchmaking",
+  "version": "1.0.0",
+  "description": "A generic matchmaking backend for all your multiplayer needs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EhoNo1/SimpleMatchmaking.git"
+  },
+  "author": "EhoNo1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EhoNo1/SimpleMatchmaking/issues"
+  },
+  "homepage": "https://github.com/EhoNo1/SimpleMatchmaking#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
