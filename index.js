@@ -1,13 +1,22 @@
+let config = require("./config.json")
+console.log(config)
+let serverBrowser = require("./lib/serverbrowser")
 const express = require("express")
 let app = express();
 
-let port = 3000;
+
+serverBrowser.addServer("000.000.000.000","JohnDoe",25565,"1.0","ExampleGame",true,false)
+
 
 
 
 app.get('/', async function(req,res) {
     res.json({test:"woah"});
 });
+
+app.get('/serverlist', async function(req,res) {
+    res.json(serverBrowser.getServerList());
+})
 
 
 
@@ -20,6 +29,6 @@ app.use(function (req, res, next) {
 
 
 //make app listenable
-app.listen(port, function () {
-    console.log("Express has started on port " + port);
+app.listen(config.port, function () {
+    console.log("Express has started on port " + config.port);
 });
