@@ -5,7 +5,7 @@ const express = require("express");
 let app = express();
 
 const bodyParser = require('body-parser');
-//app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 
 //DevelopmentTools
 if (config.devInjectSimulateEntires) {require("./dev/simulated-entries").devInjectSimulatedEntries(serverBrowser)}
@@ -39,7 +39,7 @@ app.post('/registerserver', async function(req,res) {
 
 
 app.use(function (req, res, next) {
-    res.status(404);
+    res.sendstatus(404);
     res.send("404");
 });
 
