@@ -13,4 +13,4 @@ A generic simple game-independent matchmaking server for your multiplayer needs
 2. In the project folder, run `npm install` to update any dependencies that may have changed between updates.
 
 # Running
-Use `npm index.js` in a command terminal to start the webservice.
+Use `node index.js` in a command terminal to start the webservice.
