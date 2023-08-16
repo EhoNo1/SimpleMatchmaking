@@ -18,7 +18,11 @@ app.get('/', async function(req,res) {
 
 app.get('/serverlist', async function(req,res) {
     res.json(serverBrowser.getServerList());
-})
+});
+
+app.get('/servercount', async function (req, res) {
+    res.json({"count":serverBrowser.getServerCount()});
+});
 
 app.post('/registerserver', async function(req,res) {
     //req.body
@@ -37,7 +41,7 @@ app.post('/registerserver', async function(req,res) {
 
 app.use(function (req, res, next) {
     res.status(404);
-    res.render("404");
+    res.send("404");
 });
 
 
