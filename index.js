@@ -5,10 +5,10 @@ const express = require("express");
 let app = express();
 
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended:true}));
+//app.use(bodyParser.urlencoded({extended:true}));
 
-//serverBrowser.addServer("000.000.000.000","JohnDoe",25565,"1.0","ExampleGame",true,false)
-
+//DevelopmentTools
+if (config.devInjectSimulateEntires) {require("./dev/simulated-entries").devInjectSimulatedEntries(serverBrowser)}
 
 
 
@@ -27,8 +27,7 @@ app.get('/servercount', async function (req, res) {
 app.post('/registerserver', async function(req,res) {
     //req.body
     console.log(req.body);
-    if (req.body) {
-        serverBrowser.addServer(req.body.hostIP,"Filler",25565,"1.0","ExampleGame",true,false);
+    if (req.body && serverBrowser.addServer(req.body)) {
         res.status(201);
         res.send(201);
     } else {
