@@ -39,7 +39,7 @@ app.post('/registerserver', async function(req,res) {
 
 
 app.use(function (req, res, next) {
-    res.sendstatus(404);
+    res.status(404);
     res.send("404");
 });
 
